@@ -114,7 +114,9 @@ http://127.0.0.1:8000/docs
 
 ---
 
-### Frontend Setup
+## Frontend Setup
+
+> **Note:** This project requires **Node.js 20.19+** (Node.js **22.x** recommended).
 
 ```bash
 cd frontend
