@@ -1,0 +1,118 @@
+.upload-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.dropzone {
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.3s ease;
+  color: var(--text-secondary);
+  animation: dropzoneGlow 4s ease-in-out infinite;
+}
+
+@keyframes dropzoneGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(43, 217, 201, 0);
+  }
+  50% {
+    box-shadow: 0 0 26px var(--accent-glow);
+  }
+}
+
+.dropzone:hover {
+  border-color: var(--accent);
+  background: var(--bg-panel-hover);
+}
+
+.dropzone--active {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  animation: none;
+  box-shadow: 0 0 36px var(--accent-glow);
+}
+
+.dropzone--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  animation: none;
+}
+
+.dropzone-icon {
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.dropzone-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dropzone-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.dropzone-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropzone-filename {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  word-break: break-all;
+  text-align: center;
+}
+
+.dropzone-filesize {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.scan-button {
+  background: var(--accent);
+  color: #071211;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.scan-button:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.scan-button:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.scan-button:disabled {
+  background: var(--bg-panel-raised);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}

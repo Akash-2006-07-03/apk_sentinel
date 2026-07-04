@@ -1,0 +1,51 @@
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.feature-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-panel);
+  padding: 18px 16px;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  animation: featureRise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes featureRise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-panel-hover);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.feature-title {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.feature-text {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}

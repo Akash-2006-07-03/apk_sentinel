@@ -1,0 +1,121 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Slow-drifting glow blobs behind the content — purely decorative, kept
+   subtle so it reads as atmosphere rather than a distraction. */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+
+.glow-blob--a {
+  width: 480px;
+  height: 480px;
+  top: -140px;
+  left: -100px;
+  background: var(--accent);
+  opacity: 0.1;
+  animation: driftA 20s ease-in-out infinite;
+}
+
+.glow-blob--b {
+  width: 420px;
+  height: 420px;
+  bottom: -160px;
+  right: -120px;
+  background: #8b5cf6;
+  opacity: 0.07;
+  animation: driftB 24s ease-in-out infinite;
+}
+
+@keyframes driftA {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, 30px);
+  }
+}
+
+@keyframes driftB {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40px, -40px);
+  }
+}
+
+.app-header {
+  position: relative;
+  z-index: 1;
+  padding: 24px clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.app-title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.app-tagline {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  padding: 48px clamp(20px, 5vw, 64px) 64px;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}

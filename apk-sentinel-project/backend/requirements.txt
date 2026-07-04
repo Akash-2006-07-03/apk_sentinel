@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+androguard
+python-multipart
+requests
+python-dotenv
+sqlalchemy
+psycopg2-binary
+groq
